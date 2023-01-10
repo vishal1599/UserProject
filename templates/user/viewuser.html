@@ -1,0 +1,115 @@
+<!-- <form method="get">
+    <input type="text" name="search_query" placeholder="Search users...">
+    <button type="submit">Search</button>
+  </form>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ user.date_of_birth }}</td>
+          <td>{{ user.gender }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone_number }}</td>
+          <td>{{ user.type }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+
+
+  {% if page_number > 1 %}
+  <form method="get" action="/viewuser">
+      <input type="hidden" name="page_number" value="{{ prev_page_number }}">
+      <input type="hidden" name="search_query" value="{{ search_query }}">
+      <button type="submit">Previous</button>
+  </form>
+{% endif %}
+
+Page {{ page_number }} of {{ total_pages }}
+
+{% if page_number < total_pages %}
+  <form method="get" action="/viewuser">
+      <input type="hidden" name="page_number" value="{{ next_page_number }}">
+      <input type="hidden" name="search_query" value="{{ search_query }}">
+      <button type="submit">Next</button>
+  </form>
+{% endif %} -->
+
+
+
+<div class="row" style="background-color: #95d1f1;">
+  <form method="get">
+    <input type="text" name="search_query" placeholder="Search users..." value="{{ search_query }}">
+    <button type="submit">Search</button>
+  </form>
+  <table>
+    <thead>
+        <tr>
+            <th>Name&nbsp;&nbsp;</th>
+            <th>Date of Birth&nbsp;&nbsp;</th>
+            <th>Gender&nbsp;&nbsp;</th>
+            <th>Email&nbsp;&nbsp;</th>
+            <th>Phone Number&nbsp;&nbsp;</th>
+            <th>Type&nbsp;&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.first_name }} {{ user.last_name }} &nbsp;&nbsp;</td>
+                <td>{{ user.date_of_birth }}&nbsp;&nbsp;</td>
+                <td>{{ user.gender }}&nbsp;&nbsp;</td>
+                <td>{{ user.email }}&nbsp;&nbsp;</td>
+                <td>{{ user.phone_number }}&nbsp;&nbsp;</td>
+                <td>{{ user.type }}&nbsp;&nbsp;</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  
+  {% if page_number > 1 %}
+    <form method="get" action="/viewuser">
+        <input type="hidden" name="page_number" value="{{ prev_page_number }}">
+        <input type="hidden" name="search_query" value="{{ search_query }}">
+        <button type="submit" name="prev">Previous</button>
+    </form>
+  {% endif %}
+  
+  Page {{ page_number }} of {{ total_pages }}
+  
+  {% if page_number < total_pages %}
+    <form method="get" action="/viewuser">
+        <input type="hidden" name="page_number" value="{{ next_page_number }}">
+        <input type="hidden" name="search_query" value="{{ search_query }}">
+        <button type="submit" name="next">Next</button>
+    </form>
+  {% endif %}  
+
+
+</div>
+
+
+
+  <!-- {% if page_number > 1 %}
+    <a href="/viewuser?page_number={{ prev_page_number }}&search_query={{ search_query }}">Previous</a>
+  {% endif %}
+  
+  Page {{ page_number }} of {{ total_pages }}
+  
+  {% if page_number < total_pages %}
+    <a href="/viewuser?page_number={{ next_page_number }}&search_query={{ search_query }}">Next</a>
+  {% endif %} -->
+  

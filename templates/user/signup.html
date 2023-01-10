@@ -1,0 +1,108 @@
+<section class="h-100 h-custom" style="background-color: #6ba999;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+              class="w-50" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo"> -->
+            <div class="card-body p-4 p-md-20 text-center" style="padding: auto;">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">User Info</h3>
+  
+              <form class="px-md-2" action="/signup" method="post">
+                {% csrf_token %}
+  
+                <div class="form-outline mb-4">
+                  <input type="text" id="fname" name="fname" class="form-control" />
+                  <label class="form-label" for="">First Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="lname" name="lname" class="form-control" />
+                    <label class="form-label" for="">Last Name</label>
+                </div>
+  
+                <div class="form-outline mb-4">
+                    <input type="text" id="email" name="email" class="form-control" />
+                    <label class="form-label" for="">Email</label>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <div class="form-outline mb-4">
+  
+                    <div class="form-outline datepicker">
+                      <input type="date" class="form-control" id="dob" name="dob"/>
+                      <label for="" class="form-label">Date OF Birth</label>
+                    </div>
+  
+                  </div>
+
+
+                  <!-- <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" class="form-control" required>
+                      {% for value, label in gender_choices %}
+                        <option value="{{ value }}">{{ label }}</option>
+                      {% endfor %}
+                    </select>
+                  </div> -->
+                  <div class="form-outline mb-4">
+  
+                    <select name="gender" class="select">
+                      <option value="" disabled>Gender</option>
+                      <option value="F">Female</option>
+                      <option value="M">Male</option>
+                      <option value="O">Other</option>
+                    </select>
+  
+                  </div>
+                </div>
+  
+                <div class="form-outline mb-4">
+  
+                  <select name="type" class="select">
+                    <option value="" disabled>Type</option>
+                    <option value="P">Primary</option>
+                    <option value="S">Secondary</option>
+                  </select>
+  
+                </div>
+  
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline mb-4">
+                      <input type="text" id="phnumber" name="phnumber" class="form-control" />
+                      <label class="form-label" for="">Phone Number</label>
+                    </div>
+  
+
+                    <div class="form-outline mb-4">
+                        <input type="password" id="password" name="password" class="form-control" />
+                        <label class="form-label" for="">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="password" id="confmpassword" name="confmpassword" class="form-control" />
+                        <label class="form-label" for="">Confirm Password</label>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                {% if error_message %}
+                <div class="error-message" style="display: block;color: red;">{{ error_message }}</div>
+                {% endif %}
+  
+                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

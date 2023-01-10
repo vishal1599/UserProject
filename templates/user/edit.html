@@ -1,0 +1,117 @@
+<div class="container bootstrap snippets bootdey" style="background-color: #d2a6d3;">
+    <h1 class="text-primary">Edit Profile</h1>
+      <hr>
+	<div class="row">
+      <!-- left column -->
+      <!-- <div class="col-md-3">
+        <div class="text-center">
+          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div> -->
+      
+      <!-- edit form column -->
+      <!-- <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div> -->
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" action="/edit" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+            <label class="col-lg-3 control-label">First Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="fname" name="fname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="lname" name="lname">
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <label class="col-lg-3 control-label">Date OF Birth</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div> -->
+
+          <div class="form-outline datepicker">
+            <label for="" class="col-lg-3 control-label">Date OF Birth:</label>
+            <div>
+                <input type="date" class="form-control" id="dob" name="dob"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+  
+            <select name="gender" class="select" class="col-lg-3 control-label">
+                <div>
+                    <option value="" disabled>Gender</option>
+                    <option value="F">Female</option>
+                    <option value="M">Male</option>
+                    <option value="O">Other</option>      
+                </div>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="email" name="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label" for="">Phone Number:</label>
+            <div>
+                <input type="text" id="phnumber" name="phnumber" class="form-control" />
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div> -->
+
+          <div>
+            <button type="submit" class="btn btn-primary btn-lg"
+            style="color: blue;padding-right: 10px;">Submit</button>
+            <!-- {% if success %}
+                <div class="success">{{ message }}</div>
+            {% else %}
+                <div class="error">{{ message }}</div>
+            {% endif %} -->
+            
+          </div>
+
+        </form>
+
+
+
+      </div>
+  </div>
+</div>
+<hr>
